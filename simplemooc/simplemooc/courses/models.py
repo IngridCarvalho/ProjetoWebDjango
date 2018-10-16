@@ -1,6 +1,14 @@
 from django.db import models
 
 # Create your models here.
+class CourseManager(models.Model):
+
+	def search(self, query):
+		return self.getquery().filter(
+			models.Q(name__icontains=query) | \
+			models.Q(description__icontains=query)
+		)
+
 class Course(models.Model):
 	
 	name = models.CharField(
@@ -39,4 +47,14 @@ class Course(models.Model):
 		'Atualizado em',
 		auto_now=True #auto_now -> toda vez que for atualizado pegara a data atual
 	) 
-		
+
+	objects = CourseManager();
+
+	def __str__(self):
+		return self.name
+
+	class Meta:
+		verbose_name = 'Curso'
+		verbose_name_plural = 'Cursos'
+		ordering = ['name']
+
