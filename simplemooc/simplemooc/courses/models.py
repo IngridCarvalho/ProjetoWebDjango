@@ -25,6 +25,11 @@ class Course(models.Model):
 		blank=True # blank = true -> quer dizer que o campo não é obrigatório
 	) 
 
+	about = models.TextField(
+		'Sobre',
+		blank=True
+	)
+
 	start_date = models.DateField(
 		'Data de Início', 
 		null=True, #null que no banco ele pode ser nulo
