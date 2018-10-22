@@ -16,7 +16,7 @@
 <div class="pure-g-r content-ribbon">
     <div class="pure-u-1-3">
         <div class="l-box">
-            <a href="">
+            <a href="{% url 'courses:details' course.slug %}">
             {% if course.image %}
             <img src="{{course.image.url}}" alt="{{ course.name }}">
             {% else %}
@@ -27,7 +27,7 @@
     </div>
     <div class="pure-u-2-3">
         <div class="l-box">
-            <h4 class="content-subhead"><a href="" >{{ course.name }}</a></h4>
+            <h4 class="content-subhead"><a href="{% url 'courses:details' course.slug %}" >{{ course.name }}</a></h4>
                 {{ course.description | linebreaks }} <!--Filtro para ter o paragrafo e quebra de linha (é do django) no código fonte no navegador ele cria um <p> -->
         </div>
     </div>
