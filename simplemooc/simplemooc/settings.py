@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'simplemooc.core',
     'simplemooc.courses',
+    'simplemooc.accounts'
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,10 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'simplemooc', 'media')
 
 MEDIA_URL = '/media/'
+
+
+#Auth
+
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'core:home'
+LOGOUT_URL = 'accounts:logout'
