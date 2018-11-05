@@ -1,7 +1,7 @@
 from django.urls import path, include
 
 from django.contrib.auth import views as auth_views
-from simplemooc.accounts.views import register, logout_view, dashboard, edit
+from simplemooc.accounts.views import register, logout_view, dashboard, edit, edit_password
 
 app_name = 'accounts'
 
@@ -12,4 +12,5 @@ urlpatterns = [
     path('sair/', logout_view, name='logout'),
     path('cadastre-se/', register, name='register'),
     path('editar/', edit, name='edit'),
+    path('editar-senha/', edit_password, name='edit_password'),
 ]
