@@ -13,7 +13,7 @@
 	            	{{ curse.description }}
 	            </h2>
 	            <p>
-	            	<a href="#" class="pure-button primary-button">Inscreva-se</a>
+	            	<a href="{% url 'courses:enrollment' course.slug %}" class="pure-button primary-button">Inscreva-se</a>
 	            </p>
 	        </div>
 	    </div>

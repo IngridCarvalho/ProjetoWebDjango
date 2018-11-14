@@ -39,10 +39,12 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name = 'Usuário'
         verbose_name_plural = 'Usuários'
 
+
 class PasswordReset(models.Model):
 
     user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, verbose_name='Usuário',
+        settings.AUTH_USER_MODEL, 
+        verbose_name='Usuário',
         on_delete=models.CASCADE,
         related_name='resets'
         
@@ -58,6 +60,3 @@ class PasswordReset(models.Model):
         verbose_name = 'Nova Senha'
         verbose_name_plural = 'Novas Senhas'
         ordering = ['-created_at']
-
-
-
