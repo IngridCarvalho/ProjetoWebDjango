@@ -1,11 +1,5 @@
 {% extends "registration/dashboard.html" %}
 
-{% block breadcrumb %}
-    {{ block.super }}
-    <li>/</li>
-    <li><a href="{% url 'courses:announcements' course.slug %}">{{ course }}</a></li>
-{% endblock %}
-
 {% block menu_options %}
 
  <li class="pure-menu-heading">
